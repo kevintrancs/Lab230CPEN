@@ -8,14 +8,10 @@ module Mux3W_5to1 (
        output    [2:0] LEDG       // Green LED outputs
        );
 
-//Code for the 3 bit 5-1 multiplexer
-
-       // Declaration of any needed reg or wire signals
-       wire [2:0] muxOut;   // using conditional assignments
+//Code for the 3 bit 5-1 multiplexe
 
        // Assign outputs 
-       assign LEDG = muxOut;
-       assign muxOut = SW[17:15] == 3'b000 ? SW[14:12] :
+       assign LEDG =   SW[17:15] == 3'b000 ? SW[14:12] :
                        SW[17:15] == 3'b001 ? SW[11: 9] :
                        SW[17:15] == 3'b010 ? SW[8:6]   :
                        SW[17:15] == 3'b011 ? SW[5:3]   :   
