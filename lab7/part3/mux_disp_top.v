@@ -2,7 +2,6 @@
 // CPEN 230L
 // Display Top Logic file
 // 3 wide, 5-1 Mux driving 7 segment display
-// display_top.v
 //kevin Tran
 //----------------------------------------------------
 
@@ -12,7 +11,6 @@ module display_top(
 	output [6:0] HEX0 //6 bit 7-seg display element
 	);
 	
-	//assigning output of 5 to 1 Mux to wire
 	wire [2:0] dispDrv;
 	
 	mux3w_5to1 mux (
@@ -22,8 +20,8 @@ module display_top(
 	
 	//Input output of mix into the display_decoder
 	oct7seg char0 (
-		.Cin (dispDrv), //Cin is 3 bit input
-		.Display_o (HEX0) //7bit display output
+		.c_i (dispDrv), //Cin is 3 bit input
+		.disp_o (HEX0) //7bit display output
 		);
 	endmodule
 	

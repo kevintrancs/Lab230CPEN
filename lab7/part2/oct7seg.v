@@ -5,26 +5,14 @@ module oct7seg (
   input  [2:0] c_i,      // 3-bit octal digit input
   output [6:0] disp_o);  // 7-bit output to a 7-segment display
 
-	reg[6:0] HEX0;
-	assign disp_o = HEX0;
-	
-	always @(*)
-		begin
-		if (c_i == 3'b000)
-			HEX0 = 7'b1000000;
-		else if(c_i[2:0] == 3'b001)
-			HEX0 = 7'b1111001;
-		else if(c_i[2:0] == 3'b010)
-			HEX0 = 7'b0100100;
-		else if(c_i[2:0] == 3'b011)
-			HEX0 = 7'b0110000;
-		else if(c_i[2:0] == 3'b100)
-			HEX0 = 7'b0011001;
-		else if(c_i[2:0] == 3'b101)
-			HEX0 = 7'b0010010;
-		else if(c_i[2:0] == 3'b110)
-			HEX0 = 7'b0000011;
-		else 
-			HEX0 = 7'b1111000;
-		end
+  //     7-segment display segment # 6543210
+  assign disp_o = (c_i == 3'd0) ? 7'b1000000 :
+                  (c_i == 3'd1) ? 7'b1111001 :
+                  (c_i == 3'd2) ? 7'b0100100 :
+                  (c_i == 3'd3) ? 7'b0110000 :
+                  (c_i == 3'd4) ? 7'b0011001 :
+                  (c_i == 3'd5) ? 7'b0010010 :
+                  (c_i == 3'd6) ? 7'b0000011 :
+                   7'b1111000;   
+		// meaning that a segment will light on when it gets a zero
 endmodule

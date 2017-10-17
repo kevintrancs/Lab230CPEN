@@ -17,9 +17,9 @@ module mux_disp_top_tb; // testbench top level, no inputs/outputs
     #5 SW_sim[17:15] =  3'o3;     // @t=15 output = SW[ 5: 3] = 3 = 0110000
     #5 SW_sim[17:15] =  3'o4;     // @t=20 output = SW[ 2: 0] = 4 = 0011001
     #5 SW_sim[14: 0] = 15'o56777;
-    #5 SW_sim[17:15] =  3'o5;     // @t=20 output = SW[ 2: 0] = 4 = 0011001
-    #5 SW_sim[17:15] =  3'o6;     // @t=20 output = SW[ 2: 0] = 4 = 0011001
-    #5 SW_sim[17:15] =  3'o7;     // @t=20 output = SW[ 2: 0] = 4 = 0011001
+    #5 SW_sim[17:15] =  3'o5;     // @t=25 output = SW[ 2: 0] = 4 = 0011001
+    #5 SW_sim[17:15] =  3'o6;     // @t=30 output = SW[ 2: 0] = 4 = 0011001
+    #5 SW_sim[17:15] =  3'o7;     // @t=35 output = SW[ 2: 0] = 4 = 0011001
     #5 $finish;                   // @t=40, end simulation
   end
 
