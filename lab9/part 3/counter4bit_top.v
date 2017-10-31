@@ -4,17 +4,15 @@
 //--------------------------------------------------------------------------------------
 
 module counter4bit_top(
-			input nReset,
-			input enable,			
-            input clock,
+			input KEY[2:0],
 			output [3:0] Q,
 			output [6:0] HEX0				
          );
 			
 			counter4bit cb(
-					.Clock (clock),
-					.nReset (nReset),
-					.Enable (enable),
+					.Clock (KEY[2]),
+					.nReset (KEY[1]),
+					.Enable (KEY[0]),
 					.Count (Q)
 					);
 					
