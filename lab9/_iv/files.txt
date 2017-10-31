@@ -1,0 +1,15 @@
+# Part 1, check for compile errors
+..\SR_Latch\src\SR_Latch_top.v
+..\SR_Latch\src\SR_Latch.v
+
+# Part 2, check for compile errors
+..\JK_FlipFlop\src\JK_FlipFlop_top.v
+..\JK_FlipFlop\src\JK_FlipFlop.v
+
+# Part 3, check for compile errors
+..\counter4bit\src\counter4bit_top.v
+..\counter4bit\src\hex7seg.v
+
+# Part 3, run vvp and gtkwave to verify test bench output
+..\counter4bit\sim\counter4bit_tb.v
+..\counter4bit\src\counter4bit.v
